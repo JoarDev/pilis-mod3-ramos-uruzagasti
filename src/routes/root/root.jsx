@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "../../hooks/useLocation";
 
 export default function Root() {
-    const { locationList } = useLocation()
+    const { locationList, removeLocation } = useLocation()
 
     return (
       <>
@@ -16,7 +16,7 @@ export default function Root() {
             {
                 locationList.map((location) => {
                     return (
-                        <div style={{display: "flex", flexDirection: "column", gap: 3}}>
+                        <div style={{display: "flex", flexDirection: "column", gap: 3}} key={location.name}>
                             {
                                 Object.entries(location).map(([property, value]) => {
                                     return (
@@ -24,6 +24,7 @@ export default function Root() {
                                     )
                                 })
                             }
+                            <button onClick={() => removeLocation(location.name)}>remove</button>
                         </div>
                     )
                 })

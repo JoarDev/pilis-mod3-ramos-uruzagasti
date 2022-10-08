@@ -2,7 +2,8 @@ import { createContext, useState } from "react";
 
 export const LocationContext = createContext({
   locationList: {},
-  addNewLocation: () => {}
+  addNewLocation: () => {},
+  removeLocation: () => {},
 })
 
 const INITIAL_LOCATION_LIST = [
@@ -34,7 +35,12 @@ export const LocationProvider = ({ children }) => {
 
     setlocationList((prev) => [...prev, newLocation])
   }
-  const value = { locationList, addNewLocation };
+
+  const removeLocation = (name) => {
+    setlocationList((prev) => prev.filter((location) => location.name !== name))
+  }
+
+  const value = { locationList, addNewLocation, removeLocation };
 
   return <LocationContext.Provider value={value}>{children}</LocationContext.Provider>;
 }
