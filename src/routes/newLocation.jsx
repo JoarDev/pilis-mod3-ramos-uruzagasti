@@ -12,7 +12,7 @@ export default function NewLocation() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} style={{display: "flex", flexDirection: "column", gap: 10, margin: 50}}>
           <label>
             name
             <input {...register("name", { required: true })} />
