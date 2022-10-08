@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Root() {
     const locationList = [
         {
@@ -20,7 +22,10 @@ export default function Root() {
       <>
         <div>
           <h1>Weather App</h1>
-          <button>Add new location</button>
+          <Link to={"newLocation"}>
+            <button>Add new location</button>
+          </Link>
+          
           <div>
             {
                 locationList.map((location) => {
