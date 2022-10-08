@@ -20,7 +20,7 @@ export default function Root() {
                             {
                                 Object.entries(location).map(([property, value]) => {
                                     return (
-                                        <div>{property}: {value}</div>
+                                        <div key={property} >{property}: {value}</div>
                                     )
                                 })
                             }
