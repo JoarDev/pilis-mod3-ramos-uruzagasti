@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
 export const LocationContext = createContext({
-  locationList: {},
+  locationList: [],
   addNewLocation: () => {},
   removeLocation: () => {},
 })
@@ -25,15 +25,22 @@ const INITIAL_LOCATION_LIST = [
 
 export const LocationProvider = ({ children }) => {
   const [locationList, setlocationList] = useState(INITIAL_LOCATION_LIST);
-  const addNewLocation = (data) => {
+  const addNewLocation = async (data) => {
     //fetch from api
-    const newLocation = {
-        ...data,
-        temp: 21,
-        windSpeed: 10,
+    const getWeatherURL = ({lat, long}) => `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,windspeed_10m&timezone=America/Argentina/Jujuy&current_weather=true`
+    try {
+        const body = await (await fetch(getWeatherURL(data))).json()
+        console.log("Open meteo response =>",body)
+        const { temperature, windspeed } = body.current_weather
+        const newLocation = {
+            ...data,
+            temp: temperature,
+            windSpeed: windspeed,
+        }
+        setlocationList((prev) => [...prev, newLocation])
+    } catch (error) {
+        console.log("Open meteo error =>",error)
     }
-
-    setlocationList((prev) => [...prev, newLocation])
   }
 
   const removeLocation = (name) => {
