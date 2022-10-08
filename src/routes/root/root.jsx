@@ -1,22 +1,8 @@
 import { Link } from "react-router-dom";
+import { useLocation } from "../../hooks/useLocation";
 
 export default function Root() {
-    const locationList = [
-        {
-            name: "location 1",
-            lat: "123",
-            long: "123",
-            temp: 21,
-            windSpeed: 10,
-        },
-        {
-            name: "location 2",
-            lat: "123",
-            long: "123",
-            temp: 21,
-            windSpeed: 10,
-        },
-    ]
+    const { locationList } = useLocation()
 
     return (
       <>

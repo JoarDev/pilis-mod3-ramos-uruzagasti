@@ -5,6 +5,7 @@ import {
   RouterProvider,
   Route,
 } from "react-router-dom";
+import { LocationProvider } from "./context/LocationContext";
 import ErrorPage from "./error-page";
 import "./index.css";
 import NewLocation from "./routes/newLocation";
@@ -24,6 +25,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <LocationProvider>
+        <RouterProvider router={router} />
+    </LocationProvider>
   </React.StrictMode>
 );

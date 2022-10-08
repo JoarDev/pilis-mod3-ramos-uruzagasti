@@ -1,9 +1,14 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "../hooks/useLocation";
 
 export default function NewLocation() {
+    const { addNewLocation } = useLocation()
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        console.log(data)
+        addNewLocation(data)
+        navigate("/")
     }
 
     return (
