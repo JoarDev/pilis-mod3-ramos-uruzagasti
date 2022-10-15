@@ -16,7 +16,8 @@
     "react-hook-form": "^7.37.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.4.2",
-    "use-local-storage": "^2.3.6"
+    "use-local-storage": "^2.3.6",
+    "react-leaflet": "^4.1.0"
 
   },
   "devDependencies": {
