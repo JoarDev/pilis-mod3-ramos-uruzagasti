@@ -41,20 +41,21 @@ export default function NewLocation() {
     const long = watch("long", 0)
 
     return (
-        <div>
-          <form onSubmit={handleSubmit(onSubmit)} style={{display: "flex", flexDirection: "column", gap: 10, margin: 50}}>
+      <div>
+        <div style={{height: "100vh", backgroundColor: "#242424", display: "flex", background: "rgba(0,0,0,0.7)", padding:20}}>
+          <form onSubmit={handleSubmit(onSubmit)} style={{display: "flex", flexDirection: "column", gap: 10, padding: 50, width: 300}}>
             <label>
-              name
+              Nombre de la ubicacion
               <input {...register("name", { required: true })} />
             </label>
             {errors.name && <span>This field is required</span>}
             <label>
-              latitude
+              Latitud
               <input {...register("lat", { required: true })} />
             </label>
             {errors.lat && <span>This field is required</span>}
             <label>
-              longitude
+              Longitud
               <input {...register("long", { required: true })} />
             </label>
             {errors.long && <span>This field is required</span>}
@@ -72,5 +73,6 @@ export default function NewLocation() {
             />
           </MapContainer>
         </div>
+      </div>
       );
   }
