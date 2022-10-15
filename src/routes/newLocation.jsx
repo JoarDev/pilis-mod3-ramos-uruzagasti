@@ -44,6 +44,7 @@ export default function NewLocation() {
       <div>
         <div style={{height: "100vh", backgroundColor: "#242424", display: "flex", background: "rgba(0,0,0,0.7)", padding:20}}>
           <form onSubmit={handleSubmit(onSubmit)} style={{display: "flex", flexDirection: "column", gap: 10, padding: 50, width: 300}}>
+            <h3>Presiona en el cualquier lugar del mapa para rellenar automaticamente</h3>
             <label>
               Nombre de la ubicacion
               <input {...register("name", { required: true })} />
@@ -60,7 +61,7 @@ export default function NewLocation() {
             </label>
             {errors.long && <span>This field is required</span>}
             
-            <input type="submit" />
+            <input type="submit" value="Guardar ubicacion"/>
           </form>
           <MapContainer center={[-24.185786055358633, -65.29951773114738]} zoom={14}>
             <TileLayer

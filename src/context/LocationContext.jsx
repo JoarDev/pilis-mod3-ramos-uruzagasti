@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const LocationContext = createContext({
   locationList: [],
@@ -10,6 +10,16 @@ const INITIAL_LOCATION_LIST = []
 
 export const LocationProvider = ({ children }) => {
   const [locationList, setlocationList] = useState(INITIAL_LOCATION_LIST);
+
+  useEffect(() => {
+    const data = {
+      name: "San Salvador de Jujuy",
+      lat: "-24.182032135151555",
+      long: "-65.32936099798951",
+    }
+    addNewLocation(data)
+  }, [])
+
   const addNewLocation = async (data) => {
     //fetch from api
     const getWeatherURL = ({lat, long}) => `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,windspeed_10m&timezone=America/Argentina/Jujuy&current_weather=true`
