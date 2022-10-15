@@ -7,13 +7,13 @@ import NewLocation from './routes/newLocation';
 import { Login } from './routes/Login/Login';
 
 function App() {
-  const { setLocationList } = useContext(LocationContext)
-  useEffect(() => [setLocationList])
+  /* const { setLocationList } = useContext(LocationContext)
+  useEffect(() => [setLocationList]) */
 
   return (
     <div id='body'>
       <Routes>
-        <Route path='/navigation' element={<Navigation />}>
+        <Route path='/' element={<Navigation />}>
           <Route index element={<Home />}></Route>
           <Route path='location/create' element={<NewLocation />}></Route>
           <Route path='login' element={<Login />}></Route>
