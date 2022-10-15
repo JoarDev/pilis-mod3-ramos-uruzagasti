@@ -8,6 +8,7 @@ import {
 import { LocationProvider } from "./context/LocationContext";
 import ErrorPage from "./error-page";
 import "./index.css";
+import FreeNFT from "./routes/freeNFT";
 import NewLocation from "./routes/newLocation";
 import Root from "./routes/root/root";
 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "newLocation",
     element: <NewLocation />,
+  },
+  {
+    path: "freeNFT",
+    element: <FreeNFT />,
   }
 ]);
 

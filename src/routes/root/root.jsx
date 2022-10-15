@@ -8,9 +8,14 @@ export default function Root() {
       <>
         <div style={{margin: 50}}>
           <h1>Weather App</h1>
-          <Link to={"newLocation"}>
-            <button>Add new location</button>
-          </Link>
+          <div style={{display: "flex", gap: 10, margin: 20}}>
+            <Link to={"newLocation"}>
+              <button>Add new location</button>
+            </Link>
+            <Link to={"freeNFT"}>
+              <button>Get Free NFT 🎉</button>
+            </Link>
+          </div>
           
           <div style={{display: "flex", gap: 10, margin: 20}}>
             {
