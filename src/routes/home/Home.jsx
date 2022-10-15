@@ -1,7 +1,7 @@
 import { ClimateCard } from '/src/components/location/ClimateCard';
 import { motion } from 'framer-motion';
 
-export const home = () => {
+export const Home = () => {
     return (
         <div>
             <motion.h1
