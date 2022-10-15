@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const LocationContext = createContext({
   locationList: [],
@@ -33,6 +33,7 @@ export const LocationProvider = ({ children }) => {
 }
 
 /* const addNewLocation = async (data) => {
+
     //fetch from api
     const getWeatherURL = ({ lat, long }) => `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m,windspeed_10m&timezone=America/Argentina/Jujuy&current_weather=true`
     try {

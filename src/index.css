@@ -1,4 +1,5 @@
 /*Form Style*/
+
 :root {
   --background: #ffffff;
   --text-primary: #000;
@@ -181,10 +182,10 @@ a:hover {
 }
 
 body {
-  margin-top: 0px;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background: url(https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
 h1 {
@@ -222,6 +223,3 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
-
-

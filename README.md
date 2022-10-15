@@ -1,4 +1,4 @@
-# pilis-mod3-ramos-uruzagasti
+# Pilis Modulo 3 React
 
 Se agregó un modo oscuro en el inicio de sesion, Log In.
 Tambien hay uso de 

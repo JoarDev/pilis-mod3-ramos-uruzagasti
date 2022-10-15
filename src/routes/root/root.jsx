@@ -3,6 +3,7 @@ import { useLocation } from "../../hooks/useLocation";
 import { motion } from "framer-motion";
 
 
+
 export default function Root() {
   const { locationList, removeLocation } = useLocation()
   return (
