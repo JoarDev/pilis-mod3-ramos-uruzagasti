@@ -4,11 +4,10 @@ import { Route, Routes } from 'react-router-dom';
 import { Home } from './routes/home/Home';
 import { Navigation } from './routes/Navigation/Navigation'
 import NewLocation from './routes/newLocation';
-import { Login } from './routes/Login/Login';
+import { Login } from '/src/routes/Login/Login';
 
 function App() {
-  /* const { setLocationList } = useContext(LocationContext)
-  useEffect(() => [setLocationList]) */
+ 
 
   return (
     <div id='body'>
@@ -24,15 +23,3 @@ function App() {
 }
 
 export default App
-
-{/* <motion.h1
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{
-            duration: 1,
-            ease: 'linear',
-            type: 'spring'
-          }}>
-          Weather App
-        </motion.h1>
- */}
