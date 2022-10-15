@@ -6,22 +6,7 @@ export const LocationContext = createContext({
   removeLocation: () => {},
 })
 
-const INITIAL_LOCATION_LIST = [
-    {
-        name: "location 1",
-        lat: "123",
-        long: "123",
-        temp: 21,
-        windSpeed: 10,
-    },
-    {
-        name: "location 2",
-        lat: "123",
-        long: "123",
-        temp: 21,
-        windSpeed: 10,
-    },
-]
+const INITIAL_LOCATION_LIST = []
 
 export const LocationProvider = ({ children }) => {
   const [locationList, setlocationList] = useState(INITIAL_LOCATION_LIST);
